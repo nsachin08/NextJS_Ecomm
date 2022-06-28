@@ -1,6 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
+  
 }
 
-module.exports = nextConfig
+module.exports = {nextConfig ,images: {
+  domains: ['m.media-amazon.com','assets.myntassets.com','5.imimg.com','rukminim1.flixcart.com','assets.ajio.com'],
+},} 
