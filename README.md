@@ -3,7 +3,8 @@
 
 A ecommerce website made using NEXTJS. 
 
-
+# Screenshots
+![](/Capture1.PNG)
 
 
 ## Features
