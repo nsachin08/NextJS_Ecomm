@@ -9,6 +9,7 @@ function MyApp({ Component, pageProps }) {
     <AppWrapper>
       <Head >
       <meta name="description" content="Ecomm wesbite made using NEXTJS"/>
+      <title>A Ecommerce Website</title>
         </Head>
       <Header/>
   <Component {...pageProps} />

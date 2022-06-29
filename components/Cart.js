@@ -34,18 +34,21 @@ const Cart = ({ product }) => {
       <div className="cart__detail">
         <h3>{product.title}</h3>
         <h5>{product.price}</h5>
+        <label aria-label="Update box">
         <input
           ref={nameForm}
           type="number"
           min={0}
           defaultValue={product.quantity}
           className="cart_quantity"
+
         />
-        <button onClick={onChangeBasket} className="cart__update">
+        </label>
+        <button onClick={onChangeBasket} className="cart__update" aria-label="Update Button">
           Update
         </button>
         <br />
-        <button onClick={deletefromBasket} className="cart__delete">
+        <button onClick={deletefromBasket} className="cart__delete" aria-label="Remove Button">
           Remove
         </button>
       </div>
