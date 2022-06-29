@@ -24,7 +24,7 @@ const ProductDetail = ({data}) =>{
         <Header/>
         <div className="productdetail__window">
             <div className="productdetail__image">
-                <Image src={data.images} alt=""></Image>
+                <Image src={data.images} alt="" width="100" height="100" objectFit="contain"></Image>
             </div>
             <div className="productdetail__info">
                 <h4 className="productdetail__head">{data.title}</h4>are quam odio, a scelerisque libero rutrum nec. Nunc id turpis vel justo gravida tristique auctor nec purus. Nam cursus auctor augue, eget feugiat risus consequat ac.

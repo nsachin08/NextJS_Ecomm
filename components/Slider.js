@@ -50,7 +50,7 @@ const Slider = () =>{
 
                     return (
                         <article className={position} key={indexImage}>
-                            <Image src={image} alt="banner_img" className="banner-img" width="1800" height="900"  ></Image>
+                            <Image src={image} alt="banner_img" className="banner-img" width="1900" height="900" objectFit="contain"  ></Image>
                         </article>
                     )
                 })}

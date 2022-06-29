@@ -28,13 +28,12 @@ const Cart = ({ product }) => {
 
   return (
     <div className="CART" key={product.id}>
-      <div className="cart__image__div">
-        <Image src={product.image} className="cart__image" alt="" />
-      </div>
+      <div className="cart__image">
+        <Image src={product.image}  alt="" width="100%" height="100%"  objectFit="contain"/>
+        </div>
       <div className="cart__detail">
         <h3>{product.title}</h3>
         <h5>{product.price}</h5>
-        <br></br>
         <input
           ref={nameForm}
           type="number"
