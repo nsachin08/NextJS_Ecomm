@@ -1,6 +1,5 @@
 import Head from "next/head"
 import ShowProducts from '../components/ShowProducts'
-import Header from '../components/Header'
 import Slider from '../components/Slider'
 
 export default function Home({data}) {
@@ -12,7 +11,6 @@ export default function Home({data}) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-    <Header  />
     <Slider/>
     <div className='Home'>
       <ShowProducts data={data} />

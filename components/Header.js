@@ -53,10 +53,8 @@ function Header({ setsearchTerm }) {
         </div>
         <div className="header__options">
           <Link href="/carts" aria-label="Search Icon">
-            <a><FaCartPlus className="cart__icon" /></a>
-            
+            <a href="cart"><FaCartPlus className="cart__icon" /></a>
           </Link>
-
           <p className="header__basketCount">{basket ? getcount(basket) : 0}</p>
         </div>
       </div>

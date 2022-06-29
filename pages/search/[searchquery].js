@@ -1,11 +1,10 @@
 import ShowProducts from '../../components/ShowProducts'
-import Header from '../../components/Header'
+
 
 function Search({data}){
 
     return (
         <>
-            <Header />
             <div className='Products'>
                 <ShowProducts data={data} />
             </div>

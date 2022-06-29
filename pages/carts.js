@@ -1,6 +1,6 @@
 import Cart from "../components/Cart"
 import { useAppContext } from "../context/StateProvider";
-import Header from '../components/Header'
+
 
 const Carts = () => {
     const { state , dispatch} = useAppContext();
@@ -16,7 +16,6 @@ const Carts = () => {
   
     return (
         <>
-         <Header  />
       <div className="cart__window">
         <div className="Cart_Items">
           {basket.map((product, index) => {

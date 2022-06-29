@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { useAppContext } from "../../context/StateProvider";
-import Header from '../../components/Header'
+
 
 
 const ProductDetail = ({data}) =>{
@@ -21,7 +21,6 @@ const ProductDetail = ({data}) =>{
 
     return (
         <>
-        <Header/>
         <div className="productdetail__window">
             <div className="productdetail__image">
                 <Image src={data.images} alt="" width="100" height="100" objectFit="contain"></Image>
