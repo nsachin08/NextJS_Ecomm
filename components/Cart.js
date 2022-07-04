@@ -14,6 +14,7 @@ const Cart = ({ product }) => {
         id: product.id,
       },
     });
+    console.log('Deleted')
   };
 
   const onChangeBasket = () => {
@@ -24,12 +25,13 @@ const Cart = ({ product }) => {
         id: product.id,
       },
     });
+    console.log('Updated')
   };
 
   return (
-    <div className="CART" key={product.id}>
+    <div className="CART" key={product.id} data-testid={`cart_${product.id}`}>
       <div className="cart__image">
-        <Image src={product.image}  alt="" width="100%" height="100%"  objectFit="contain"/>
+        <Image src={product.image}  alt="Product Image" width="100%" height="100%"  objectFit="contain"/>
         </div>
       <div className="cart__detail">
         <h3>{product.title}</h3>
@@ -41,6 +43,7 @@ const Cart = ({ product }) => {
           min={0}
           defaultValue={product.quantity}
           className="cart_quantity"
+          data-testid={`cart_quantity_${product.id}`}
 
         />
         </label>

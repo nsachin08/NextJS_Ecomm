@@ -20,10 +20,13 @@ const ShowProduct = ({ product }) => {
     return (
       <>
        
-        <div className="product" key={product._id}>
+        <div className="product" key={product._id} data-testid={`product_${product.id}`} >
             <Link href={`/product/${product._id}`}>
+          <a>
           <Image className="product__image" src={product.images}  alt="" width="80%" height="40%" layout="responsive" objectFit="contain"/>
+          </a>
           </Link>
+          
           <h4 className="product__title">{product.title}</h4>
           <p className="product__price">{product.price}</p>
          
@@ -31,7 +34,7 @@ const ShowProduct = ({ product }) => {
             Add to Basket
           </button>
         </div>
-        </>
+      </>
        
     );
   };
