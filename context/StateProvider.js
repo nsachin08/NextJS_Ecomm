@@ -1,21 +1,12 @@
 import { useEffect,createContext, useContext, useMemo ,useReducer } from "react"
 import {reducer ,initialState} from './reducer'
 
-const AppContext = createContext();
+export const AppContext = createContext({});
 
 
 export function AppWrapper({ children }) {
    const [state,dispatch] = useReducer(reducer,initialState);
    useEffect(()=>{  
-    // const load = JSON.parse(localStorage.getItem("cart"));
-    // console.log(load)
-    // if(load)
-    // {
-    //   dispatch({
-    //     type:"init_stored",
-    //     value:JSON.parse(localStorage.getItem("cart"))
-    //   });
-    // }
 
     try {
       if(JSON.parse(localStorage.getItem("cart")))
