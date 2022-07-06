@@ -13,7 +13,7 @@ A ecommerce website made using NEXTJS.
 
 - Supports CART Function.
 
-- Supports data persistency even after the reload /revisits using LocalStorage.
+- Supports data persistency of cart even after the reload /revisits using LocalStorage.
  
 - Has a green Web Vital Score.
 
