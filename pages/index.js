@@ -6,7 +6,7 @@ export default function Home({ data }) {
   return (
     <>
       <Head>
-        <title>Ecomm</title>
+        <title>Ecom</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
