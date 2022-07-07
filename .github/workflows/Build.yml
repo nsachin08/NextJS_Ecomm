@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x, 14.x]
+        node-version: [14.x]
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
@@ -30,17 +30,6 @@ jobs:
 
       - name: Run Unit Test
         run: npx jest --coverage
-
-      - name: Deploy to Production
-        uses: amondnet/vercel-action@v20
-        id: deploy-vercel-production
-        if: github.event_name == 'push' && github.ref == 'refs/head/main'
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN}}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID_TL_ENGINE}}
-          vercel-args: "--prod"
-          scope: ${{ secrets.VERCEL_ORG_ID}}
 
       - name: "Deploy to Vercel"
         run: |
