@@ -29,7 +29,7 @@ jobs:
           npm run build
       
       - name: Run Unit Test
-        run: npm test
+        run: npx jest --coverage
 
   Staging:
     name: Staging & Test
@@ -40,15 +40,15 @@ jobs:
         id: deploy-vercel-staging
         uses: amondnet/vercel-action@v20
         with:
-          vercel-token:
-          vercel-org-id:
-          vercel-project-id:
-          scope:
+          vercel-token: ${{ secrets.VERCEL_TOKEN}}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID_TL_ENGINE}}
+          scope: ${{ secrets.VERCEL_ORG_ID}}   
       
       - name: Run Tests Against Vercel
         env:
           VERCEL_URL: ${{ steps.deploy-vercel-staging.outputs.preview-url}} 
-        run: npm test
+        run: npx jest --coverage
   Deploy:
     name: Deployment
     runs-on: ubuntu-latest
