@@ -29,5 +29,17 @@
     "eslint-config-next": "12.1.6",
     "jest": "^28.1.2",
     "jest-environment-jsdom": "^28.1.2"
-  }
+  },
+  "description": "A ecommerce website made using NEXTJS.",
+  "main": "jest.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nsachin08/NextJS_Ecomm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nsachin08/NextJS_Ecomm/issues"
+  },
+  "homepage": "https://github.com/nsachin08/NextJS_Ecomm#readme"
 }
