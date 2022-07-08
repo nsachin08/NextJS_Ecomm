@@ -284,7 +284,7 @@ article.nextSlide {
   mask-image: linear-gradient(to bottom,rgba(0,0,0,1),rgba(0,0,0,0));
 }
 
-.prev,.next{
+.slider__prev,.slider__next{
   position:absolute;
   top:200px;
   margin-left : 10px;
@@ -296,11 +296,11 @@ article.nextSlide {
   cursor:pointer;
 }
 
-.prev{
+.slider__prev{
   left:0;
 }
 
-.next{
+.slider__next{
   right:0;
 }
 

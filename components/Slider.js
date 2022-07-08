@@ -56,10 +56,10 @@ const Slider = () =>{
                         </article>
                     )
                 })}
-                <p className="prev" onClick={() => setIndex(index-1)}>
+                <p className="slider__prev" onClick={() => setIndex(index-1)}>
                     <FaArrowLeft/>
                 </p>
-                <p className="next" onClick={() => setIndex(index+1)}>
+                <p className="slider__next" onClick={() => setIndex(index+1)}>
                     <FaArrowRight/>
                 </p>
             </div>
