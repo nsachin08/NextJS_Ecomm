@@ -1,19 +1,24 @@
 import Head from "next/head";
 import ShowProducts from "../components/ShowProducts";
 import Slider from "../components/Slider";
+import FlashDeals from "../components/FlashDeals";
+import Wrapper from "../components/Wrapper";
+import Discount from "../components/Discount";
+import Announcement from "../components/Announcement";
 
 export default function Home({ data }) {
   return (
     <>
-      <Head>
-        <title>Ecom</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
-      <Slider />
-      <div className="Home">
-        <ShowProducts data={data} />
-      </div>
+      <section className="home">
+        <div className="container d_flex">
+          <Slider />
+          <FlashDeals />
+          <Discount />
+          <ShowProducts data={data} />
+          <Announcement />
+          <Wrapper />
+        </div>
+      </section>
     </>
   );
 }

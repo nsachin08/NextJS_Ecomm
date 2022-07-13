@@ -1,7 +1,7 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { AppWrapper } from "../context/StateProvider";
 import "@testing-library/jest-dom";
-import ShowProduct from "../components/ShowProduct";
+import Product from "../components/Product";
 import Banner1 from "../BannerImages/Banner1.jpg";
 import { reducer } from "../context/reducer";
 
@@ -9,7 +9,7 @@ describe("Checking Product Component", () => {
   function renderProduct(data) {
     return render(
       <AppWrapper>
-        <ShowProduct product={data} />
+        <Product product={data} />
       </AppWrapper>
     );
   }
@@ -32,7 +32,8 @@ describe("Checking Product Component", () => {
     expect(Product).toHaveTextContent(data1.price);
   });
 
-  test("Should Add to Cart upon clicking in Add to cart", () => {
+  test("Should Add to Cart upon clicking add Button", () => {
+    renderProduct(data1);
     const addAction = {
       type: "ADD_TO_BASKET",
       item: {
@@ -46,10 +47,5 @@ describe("Checking Product Component", () => {
       basket: [data1],
     };
     expect(reducer(state, addAction)).toEqual(stateafter);
-    data1.quantity = 2;
-    const stateafter1 = {
-      basket: [data1],
-    };
-    expect(reducer(state, addAction)).toEqual(stateafter1);
   });
 });
