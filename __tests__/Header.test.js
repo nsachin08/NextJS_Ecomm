@@ -10,7 +10,7 @@ jest.mock("next/router", () => ({
 }));
 
 initialState.basket = [
-  { id: 1, title: "Product Name", price: 500, quantity: 7 },
+  { _id: 1, title: "Product Name", price: 500, quantity: 7 },
 ];
 
 describe("Checking Header Component", () => {
@@ -25,7 +25,7 @@ describe("Checking Header Component", () => {
   test("Should render Header  Elements ", () => {
     renderHeader();
     const Headerlement = screen.getByTestId("Header");
-    expect(Headerlement).toHaveTextContent("Ecom");
+    expect(Headerlement).toBeInTheDocument();
     const InputBox = screen.getByLabelText("Search Box");
     expect(InputBox).toHaveTextContent("");
     const Cart = screen.getByLabelText("Cart Count");

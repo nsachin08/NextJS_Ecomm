@@ -1,43 +1,46 @@
 import { useAppContext } from "../context/StateProvider";
-import Image from 'next/image'
-import  Link from 'next/link'
+import Image from "next/image";
+import Link from "next/link";
 
 const ShowProduct = ({ product }) => {
-    const {state, dispatch} = useAppContext();
-  
-    const addToBasket = () => {
-      dispatch({
-        type: "ADD_TO_BASKET",
-        item: {
-          id: product._id,
-          title: product.title,
-          price: product.price,
-          image: product.images,
-        },
-      });
-    };
-  
-    return (
-      <>
-       
-        <div className="product" key={product._id} data-testid={`product_${product.id}`} >
-            <Link href={`/product/${product._id}`}>
-          <a>
-          <Image className="product__image" src={product.images}  alt="" width="80%" height="40%" layout="responsive" objectFit="contain"/>
-          </a>
-          </Link>
-          
-          <h4 className="product__title">{product.title}</h4>
-          <p className="product__price">{product.price}</p>
-         
-          <button onClick={addToBasket} className="product__button">
-            Add to Basket
-          </button>
-        </div>
-      </>
-       
-    );
+  const { state, dispatch } = useAppContext();
+
+  const addToBasket = () => {
+    dispatch({
+      type: "ADD_TO_BASKET",
+      item: {
+        _id: product._id,
+        title: product.title,
+        price: product.price,
+        image: product.images,
+      },
+    });
   };
-  
-  export default ShowProduct;
-  
+
+  return (
+    <>
+      <div className="box" data-testid={`product_${product._id}`}>
+        <div className="product mtop">
+          <div className="img">
+            <Link href={`/product/${product._id}`}>
+              <div>
+                <Image src={product.images} alt="" height={150} width={150} />
+              </div>
+            </Link>
+          </div>
+          <div>
+            <h3>{product.title}</h3>
+            <div className="price">
+              <h4>${product.price}.00 </h4>
+              <button onClick={addToBasket} aria-label="Add to basket">
+                <i className="fa fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default ShowProduct;

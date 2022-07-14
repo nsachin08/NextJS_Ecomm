@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { FaCartPlus, FaSearch } from "react-icons/fa";
 import Router from "next/router";
 import { useAppContext } from "../context/StateProvider";
@@ -25,44 +26,43 @@ function Header() {
   };
 
   return (
-    <div className="header" data-testid="Header">
-      <div className="header__top">
-        <div className="header__name">
-          <Link href="/" className="header__nametext">
-            Ecom
-          </Link>
-        </div>
-        <div className="header__search">
-          <label aria-label="Search Box">
+    <>
+      <section className="search" data-testid="Header">
+        <div className="container c_flex">
+          <div className="logo width">
+            <Link href="/">
+              <div>
+                <Image src="/Logo.PNG" height="97" width="256" alt="Logo " />
+              </div>
+            </Link>
+          </div>
+
+          <div className="search-box f_flex">
+            <i className="fa fa-search"></i>
             <input
               ref={nameForm}
               name={"search"}
               placeholder="Search for products,brands and more."
-              className="header__searchInput"
+              aria-label="Search Box"
             ></input>
-            <button
-              className="header__searchbutton"
-              onClick={search}
-              aria-label="Search Button"
-              type="button"
-            >
+            <button onClick={search} type="button" aria-label="Search Button">
               <FaSearch />
             </button>
-          </label>
+          </div>
+
+          <div className="icon f_flex width">
+            <div className="cart">
+              <Link href="/carts">
+                <i className="fa fa-shopping-bag icon-circle"></i>
+              </Link>
+              <span aria-label="Cart Count">
+                {basket ? getcount(basket) : 0}
+              </span>
+            </div>
+          </div>
         </div>
-        <div className="header__options">
-          <Link href="/carts" aria-label="Search Icon">
-            <a href="cart">
-              <FaCartPlus className="cart__icon" />
-            </a>
-          </Link>
-          <p className="header__basketCount" aria-label="Cart Count">
-            {basket ? getcount(basket) : 0}
-          </p>
-        </div>
-      </div>
-      <div className="header__nav">{/* <Navbar /> */}</div>
-    </div>
+      </section>
+    </>
   );
 }
 

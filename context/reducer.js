@@ -1,18 +1,15 @@
-
-
 export const initialState = {
   basket: [],
 };
 
 export const reducer = (state, action) => {
   switch (action.type) {
-
     case "init_stored":
-      return action.value
+      return action.value;
 
     case "ADD_TO_BASKET":
       const itemIndex = state.basket.findIndex(
-        (item) => item.id == action.item.id
+        (item) => item._id == action.item._id
       );
       if (itemIndex == -1) {
         action.item.quantity = 1;
@@ -30,26 +27,24 @@ export const reducer = (state, action) => {
         basket: [...state.basket],
       };
     case "DELETE_FROM_BASKET":
-      
-      state.basket = state.basket.filter((item) => item.id != action.item.id);
+      state.basket = state.basket.filter((item) => item._id != action.item._id);
       localStorage.setItem("cart", JSON.stringify([...state.basket]));
       return {
         ...state,
         basket: [...state.basket],
       };
-  
-
 
     case "ON_CHANGE_BASKET":
-      if(state.basket.length === 0)
-      {
+      if (state.basket.length === 0) {
         return state;
       }
       if (action.item.quantity == 0) {
-        state.basket = state.basket.filter((item) => item.id != action.item.id);
+        state.basket = state.basket.filter(
+          (item) => item._id != action.item._id
+        );
       } else {
         const cartindex = state.basket.findIndex(
-          (item) => item.id == action.item.id
+          (item) => item._id == action.item._id
         );
         state.basket[cartindex].quantity = parseInt(action.item.quantity);
       }
@@ -64,4 +59,3 @@ export const reducer = (state, action) => {
       return state;
   }
 };
-
