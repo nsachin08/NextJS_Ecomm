@@ -19,7 +19,7 @@ const Product = ({ product }) => {
     <div className="box" data-testid={`product_${product._id}`}>
       <div className="product mtop">
         <div className="img">
-          <img src={product.images} alt="" width="277px" height="270px" />
+          <img src={product.images} alt="" layout="fill" />
         </div>
         <div className="product-details">
           <h3>{product.title}</h3>

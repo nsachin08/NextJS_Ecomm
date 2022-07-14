@@ -1,11 +1,11 @@
 function Announcement() {
   const mystyle = {
-    width: "382px",
-    height: "332px",
+    width: "100%",
+    height: "auto",
   };
   const mystyle1 = {
-    width: "778px",
-    height: "332px",
+    width: "100%",
+    height: "auto",
   };
   return (
     <>

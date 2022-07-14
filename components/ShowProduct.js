@@ -19,7 +19,7 @@ const ShowProduct = ({ product }) => {
 
   return (
     <>
-      <div className="box" data-testid={`product_${product._id}`}>
+      <div className="box product-child" data-testid={`product_${product._id}`}>
         <div className="product mtop">
           <div className="img">
             <Link href={`/product/${product._id}`}>
