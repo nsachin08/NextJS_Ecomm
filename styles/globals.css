@@ -198,7 +198,7 @@ button {
 }
 
 .img {
-  height: 250px;
+  height: 270px;
   width: 250px;
 }
 
@@ -272,8 +272,8 @@ button {
 }
 
 .NewArrivals .box img {
-  width: 100%;
-  height: 100%;
+  width: 277px;
+  height: 270px;
 }
 
 /* ---------------- Discounts Ends --------*/
@@ -362,6 +362,11 @@ footer li {
   transition: 0.5s;
   border-radius: 5px;
   text-align: center;
+}
+
+.shop .box img {
+  width: 277px;
+  height: 270px;
 }
 
 .grid1 {

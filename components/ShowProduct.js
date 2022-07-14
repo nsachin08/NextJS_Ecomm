@@ -24,7 +24,13 @@ const ShowProduct = ({ product }) => {
           <div className="img">
             <Link href={`/product/${product._id}`}>
               <div>
-                <Image src={product.images} alt="" height={150} width={150} />
+                <Image
+                  src={product.images}
+                  alt=""
+                  height={150}
+                  width={150}
+                  layout="responsive"
+                />
               </div>
             </Link>
           </div>
