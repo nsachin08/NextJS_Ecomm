@@ -23,3 +23,10 @@
 .pagination .active {
   background-color: #5ab1bb;
 }
+
+@media (max-width: 800px) {
+  .pagination {
+    font-size: 0.5rem;
+    gap: 1px;
+  }
+}

@@ -40,6 +40,14 @@ const FlashCards = () => {
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
   };
 
   return (
