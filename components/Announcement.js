@@ -1,17 +1,9 @@
 function Announcement() {
-  const mystyle = {
-    width: "100%",
-    height: "auto",
-  };
-  const mystyle1 = {
-    width: "100%",
-    height: "auto",
-  };
   return (
     <>
       <section className="annocument background" data-testid="Announcement">
         <div className="container f_flex ">
-          <div className="img" style={mystyle}>
+          <div className="img" >
             <img
               src="/announcement/banner-1.png"
               width="100%"
@@ -19,7 +11,7 @@ function Announcement() {
               alt=""
             />
           </div>
-          <div className="img" style={mystyle1}>
+          <div className="img" >
             <img
               src="/announcement/banner-2.png"
               width="100%"
@@ -27,7 +19,7 @@ function Announcement() {
               alt=""
             />
           </div>
-          <div className="img" style={mystyle}>
+          <div className="img">
             <img
               src="/announcement/banner-1.png"
               width="100%"
